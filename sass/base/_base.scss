@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+
+    /* not all css property are inherited by default*/
+    /* box-sizing is not inherited for example, and we can make box sizing inherited by passing inherit value */
+    /* this box-sizing inherited from its parent, body in this case */
+    box-sizing: inherit;
+}
+
+html {
+    /* most browser default font-size is 16px */
+    /* we change it to 10px here, so its 62.5% of 16 */
+    /* we use percentage for responsive/adaptive to default browser font-size */
+    /* 1rem equal to root font-size 10px in this case (if default font-size is 16px) */
+    font-size: 62.5%;
+}

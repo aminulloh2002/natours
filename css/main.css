@@ -1,77 +1,3 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  /* not all css property are inherited by default*/
-  /* box-sizing is not inherited for example, and we can make box sizing inherited by passing inherit value */
-  /* this box-sizing inherited from its parent, body in this case */
-  box-sizing: inherit; }
-
-html {
-  /* most browser default font-size is 16px */
-  /* we change it to 10px here, so its 62.5% of 16 */
-  /* we use percentage for responsive/adaptive to default browser font-size */
-  /* 1rem equal to root font-size 10px in this case (if default font-size is 16px) */
-  font-size: 62.5%; }
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(./../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  .header__logo-box {
-    position: absolute;
-    /* when u use absolute position top and left px are based on parent that have relative position */
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem;
-    cursor: pointer;
-    /*the width will be automatically figured out by the browser */ }
-  .header__logo:hover {
-    animation: moveInInitialRight 2s ease-out; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /* prevent shaking on animation */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    /* animation-delay: .5s; */
-    /* animation-iteration-count: infinite; */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    animation: moveInRight 2s ease-out; }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -113,6 +39,55 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* not all css property are inherited by default*/
+  /* box-sizing is not inherited for example, and we can make box sizing inherited by passing inherit value */
+  /* this box-sizing inherited from its parent, body in this case */
+  box-sizing: inherit; }
+
+html {
+  /* most browser default font-size is 16px */
+  /* we change it to 10px here, so its 62.5% of 16 */
+  /* we use percentage for responsive/adaptive to default browser font-size */
+  /* 1rem equal to root font-size 10px in this case (if default font-size is 16px) */
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* prevent shaking on animation */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    /* animation-delay: .5s; */
+    /* animation-iteration-count: infinite; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    animation: moveInRight 2s ease-out; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -156,3 +131,28 @@ body {
 .btn--animated {
   animation: moveInBottom 1s ease-out .75s;
   animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(./../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    /* when u use absolute position top and left px are based on parent that have relative position */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    cursor: pointer;
+    /*the width will be automatically figured out by the browser */ }
+  .header__logo:hover {
+    animation: moveInInitialRight 2s ease-out; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
