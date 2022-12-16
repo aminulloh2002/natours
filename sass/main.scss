@@ -1,8 +1,9 @@
-$color-primary:#7ed56f;
-$color-primary-light:#55c57a;
-$color-primary-dark:#28b485;
-$color-grey-dark:#777;
-$color-white:#fff;
+$color-primary: #7ed56f;
+$color-primary-light: #55c57a;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
 
 *,
 *::after,
@@ -16,12 +17,12 @@ $color-white:#fff;
     box-sizing: inherit;
 }
 
-html{
+html {
     /* most browser default font-size is 16px */
     /* we change it to 10px here, so its 62.5% of 16 */
     /* we use percentage for responsive/adaptive to default browser font-size */
     /* 1rem equal to root font-size 10px in this case (if default font-size is 16px) */
-    font-size:62.5%;
+    font-size: 62.5%;
 }
 
 body {
@@ -46,31 +47,34 @@ body {
     position: relative;
 
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
-    position: absolute;
-    /* when u use absolute position top and left px are based on parent that have relative position */
-    top: 4rem;
-    left: 4rem;
-}
+    // this & symbol represent the parent class
+    // so in here the & equal to .header
+    // and this &__logo-box equals to .header__logo-box
+    &__logo-box {
+        position: absolute;
+        /* when u use absolute position top and left px are based on parent that have relative position */
+        top: 4rem;
+        left: 4rem;
+    }
 
-.header__logo {
-    height: 3.5rem;
-    cursor: pointer;
-    /*the width will be automatically figured out by the browser */
-}
+    &__logo {
+        height: 3.5rem;
+        cursor: pointer;
+        /*the width will be automatically figured out by the browser */
+    }
 
-.header__logo:hover {
-    animation: moveInInitialRight 2s ease-out;
-}
+    &__logo:hover {
+        animation: moveInInitialRight 2s ease-out;
+    }
 
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 }
 
 .heading-primary {
@@ -80,28 +84,27 @@ body {
     /* prevent shaking on animation */
     backface-visibility: hidden;
     margin-bottom: 6rem;
-}
 
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
 
-.heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        /* animation-delay: .5s; */
+        /* animation-iteration-count: infinite; */
+    }
 
-    animation-name: moveInLeft;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    /* animation-delay: .5s; */
-    /* animation-iteration-count: infinite; */
-}
-
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    animation: moveInRight 2s ease-out;
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.74rem;
+        animation: moveInRight 2s ease-out;
+    }
 }
 
 @keyframes moveInLeft {
@@ -170,56 +173,59 @@ body {
     }
 }
 
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .3s;
-    position: relative;
-    font-size: 1.6rem;
-}
+.btn {
 
-.btn:hover{
-    transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-}
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .3s;
+        position: relative;
+        font-size: 1.6rem;
+    }
 
-.btn:active{
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-}
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
 
-.btn--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-}
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
 
-.btn::after{
-    content:'';
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: -1;
-    transition: all .5s;
-}
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
 
-.btn--white::after {
-    background-color: $color-white;
-}
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
 
-.btn:hover::after{
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity:0;
-}
+        &::after {
+            background-color: $color-white;
+        }
+    }
 
-.btn--animated{
-    animation: moveInBottom 1s ease-out .75s;
-    animation-fill-mode: backwards;
+    &::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .5s;
+    }
+
+    &--animated {
+        animation: moveInBottom 1s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
 }
