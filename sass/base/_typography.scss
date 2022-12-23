@@ -38,3 +38,23 @@ body {
         animation: moveInRight 2s ease-out;
     }
 }
+
+.heading-secondary{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    display: inline-block; //so the text did not occupy 100% of the available width
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent;
+    letter-spacing: 2px;
+    transition: all .2s;
+    display: flex;
+    justify-content: center;
+
+    &:hover{
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
