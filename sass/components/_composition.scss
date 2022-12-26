@@ -27,7 +27,7 @@
         &:hover {
             outline: 1.5rem solid $color-primary;
             outline-offset: .5rem;
-            border-radius: 0;
+            // border-radius: 0;
             transform: scale(1.05) translateY(-5px);
             box-shadow: 0 2.5rem 4rem rgba($color-black, .4);
             z-index: 20;
