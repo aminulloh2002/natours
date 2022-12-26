@@ -1,6 +1,6 @@
 .section-about {
     background-color: $color-grey-light-1;
-    padding: 25rem 0 0 0;
+    padding: 25rem 0 15rem 0;
     margin-top: -20vh;
 
 }
@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     flex: 0 0 0px;
-    margin: 0 10vw;
+    margin: 10vw;
 
     &__description,
     &__images {
@@ -26,6 +26,33 @@
     &__cards {
         display: flex;
         justify-content: space-around;
+
+        @media screen and (min-width:92rem) {
+            padding: 0 10vw;
+        }
+    }
+}
+
+.section-features {
+    margin-top: -12rem;
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, .8),
+            rgba($color-primary-dark, .8)),
+        url(./../img/nat-4.jpg);
+    background-size: cover;
+
+    transform: skewY(-7deg);
+
+    // & > * {
+    //     transform: skewY(7deg);
+    // }
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        transform: skewY(7deg);
 
         @media screen and (min-width:92rem) {
             padding: 0 10vw;
