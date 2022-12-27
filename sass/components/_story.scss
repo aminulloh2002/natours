@@ -1,0 +1,71 @@
+.stories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story {
+    max-width: 114rem;
+    width: 75%;
+    margin: 4rem auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    &>* {
+        // if your child had their own transform property, u have to put skewX too, or this gonna be overrided
+        transform: skewX(12deg);
+    }
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        // make the text circleing around the element 
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%); // in order to make shape outside works, the element must be floated and defined size
+        // this clip path work the same as border radius 50%
+        clip-path: circle(50% at 50% 50%);
+        ;
+        // border-radius: 50%;
+        transform: translateX(-3rem) skewX(12deg); // use transform for margin on float element
+        position: relative;
+    }
+
+    &__img {
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .5s;
+    }
+
+    &__text {
+        // transform: skewX(12deg);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        // backface-visibility: hidden; // to fix little shaking at the end of the transition, but i dont see it, so i commented it
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(.9); // you can do .9 or 90%, work the same for birghtness
+    }
+}
