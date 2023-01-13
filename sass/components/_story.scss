@@ -10,7 +10,7 @@
     margin: 4rem auto;
     box-shadow: 0 3rem 6rem rgba($color-black, .1);
     background-color: rgba($color-white, .6);
-    border-radius: 3px;
+    border-radius: $default-border-radius;
     padding: 9rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
@@ -41,9 +41,9 @@
         transition: all .5s;
     }
 
-    &__text {
-        // transform: skewX(12deg);
-    }
+    // &__text {
+    //     // transform: skewX(12deg);
+    // }
 
     &__caption {
         position: absolute;

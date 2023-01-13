@@ -39,7 +39,7 @@ body {
     }
 }
 
-.heading-secondary{
+.heading-secondary {
     font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -47,31 +47,31 @@ body {
     display: inline-block; //so the text did not occupy 100% of the available width
     -webkit-background-clip: text;
     background-clip: text;
-    color:transparent;
+    color: transparent;
     letter-spacing: 2px;
     transition: all .2s;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    text-align: center; 
+    text-align: center;
 
-    &:hover{
+    &:hover {
         transform: skewY(1deg) skewX(1deg) scale(1.1);
         text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
     }
 }
 
 
-.heading-tertiary{
+.heading-tertiary {
     font-size: $default-font-size;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-.paragraph{
+.paragraph {
     font-size: $default-font-size;
 
-    &:not(:last-child){
+    &:not(:last-child) {
         margin-bottom: 3rem;
     }
 }

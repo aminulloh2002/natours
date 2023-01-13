@@ -16,4 +16,8 @@ html {
     /* we use percentage for responsive/adaptive to default browser font-size */
     /* 1rem equal to root font-size 10px in this case (if default font-size is 16px) */
     font-size: 62.5%;
+
+    @media screen and (max-width:976px) {
+        font-size: 40%;
+    }
 }
